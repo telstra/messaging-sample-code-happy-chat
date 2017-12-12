@@ -479,7 +479,7 @@ var DemoComponent = (function () {
                     subjectContent = "Hi! Thanks for using Happy Chat! We all love Happy Chat!";
                 }
                 // construct the MMS payload
-                var mms = new __WEBPACK_IMPORTED_MODULE_7__models_mms_model__["a" /* MMS */](this.myNumber, numbers, subjectContent, this.replyRequest, this.mmsContent);
+                var mms = new __WEBPACK_IMPORTED_MODULE_7__models_mms_model__["a" /* MMS */](this.myNumber, numbers, subjectContent, this.replyRequest, this.myNotifyURL, this.mmsContent);
                 console.log('sending', mms);
                 this.messageWaiting = this.messaging.sendMMS(mms).subscribe(function (response) {
                     _this.messageWaiting.unsubscribe();
@@ -932,11 +932,12 @@ var MMSContent = (function () {
 }());
 
 var MMS = (function () {
-    function MMS(from, to, subject, replyRequest, MMSContent) {
+    function MMS(from, to, subject, replyRequest, notifyURL, MMSContent) {
         this.from = from;
         this.to = to;
         this.subject = subject;
         this.replyRequest = replyRequest;
+        this.notifyURL = notifyURL;
         this.MMSContent = MMSContent;
     }
     return MMS;

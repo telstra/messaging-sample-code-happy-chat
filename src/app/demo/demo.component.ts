@@ -213,6 +213,7 @@ export class DemoComponent implements OnInit {
           numbers,
           subjectContent,
           this.replyRequest,
+          this.myNotifyURL,
           this.mmsContent
         );
 
